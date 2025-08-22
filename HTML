@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOCKUP - Leeds Security Bank</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            min-height: 100vh;
+        }
+
+        .mockup-banner {
+            background: #ff4444;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .header {
+            background: white;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            color: #1e3c72;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .location {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .login-section {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .dashboard {
+            display: none;
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .btn {
+            background: #1e3c72;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #2a5298;
+        }
+
+        .account-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .info-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #1e3c72;
+        }
+
+        .balance {
+            font-size: 32px;
+            font-weight: bold;
+            color: #28a745;
+            margin: 10px 0;
+        }
+
+        .logout-btn {
+            background: #dc3545;
+            float: right;
+        }
+
+        .logout-btn:hover {
+            background: #c82333;
+        }
+
+        .contact-info {
+            background: #e9ecef;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="mockup-banner">
+        🚨 MOCKUP  ONLY - NOT A REAL BANK - FOR PERSON  PURPOSES 🚨
+    </div>
+
+    <div class="header">
+        <div class="container">
+            <div class="logo">Leeds Security Bank</div>
+            <div class="location">📍 United Kingdom</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Login Section -->
+        <div class="login-section" id="loginSection">
+            <h2>Online Banking Login</h2>
+            <p style="color: #666; margin-bottom: 20px;">BEST VERSION - Use the credentials below</p>
+            
+            <div class="form-group">
+                <label for="accountNumber">Account Number:</label>
+                <input type="text" id="accountNumber" placeholder="78294662994">
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" placeholder="560111">
+            </div>
+            
+            <button class="btn" onclick="login()">Login</button>
+            
+            <div class="contact-info">
+                <strong>Bank Contact:</strong><br>
+                📧 Email: info@leedssecuritybank.co.uk<br>
+                📞 Phone: +44 113 XXX XXXX 
+            </div>
+        </div>
+
+        <!-- Dashboard Section -->
+        <div class="dashboard" id="dashboard">
+            <button class="btn logout-btn" onclick="logout()">Logout</button>
+            <h2>Welcome, Geel Loe</h2>
+            <p style="color: #666;">Account Dashboard - DEMO MODE</p>
+            
+            <div class="account-info">
+                <div class="info-card">
+                    <h3>Account Balance</h3>
+                    <div class="balance">£300,000.00</div>
+                    <small>Current Account</small>
+                </div>
+                
+                <div class="info-card">
+                    <h3>Account Details</h3>
+                    <p><strong>Account Number:</strong> 78294662994</p>
+                    <p><strong>Account Holder:</strong> Geel Loe</p>
+                    <p><strong>Account Type:</strong> Premium Current</p>
+                </div>
+                
+                <div class="info-card">
+                    <h3>Security</h3>
+                    <p><strong>Transaction PIN:</strong> ••••</p>
+                    <p><strong>Last Login:</strong> Today</p>
+                    <p><strong>Status:</strong> Active</p>
+                </div>
+            </div>
+            
+            <div style="background: #fff3cd; border: 1px solid #ffeaa7; padding: 15px; border-radius: 5px; margin: 20px 0;">
+                <strong> Notice:</strong> This is a mockup interface. real transactions can be performed.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function login() {
+            const accountNumber = document.getElementById('accountNumber').value;
+            const password = document.getElementById('password').value;
+            
+            // Demo credentials check
+            if (accountNumber === '78294662994' && password === '560111') {
+                document.getElementById('loginSection').style.display = 'none';
+                document.getElementById('dashboard').style.display = 'block';
+            } else {
+                alert('Login: Use Account Number: 78294662994 and Password: 560111');
+            }
+        }
+        
+        function logout() {
+            document.getElementById('loginSection').style.display = 'open';
+            document.getElementById('dashboard').style.display = 'none';
+            document.getElementById('accountNumber').value = '';
+            document.getElementById('password').value = '';
+        }
+        
+        // demo credentials hint
+        window.onload = function() {
+            document.getElementById('accountNumber').value = '78294662994';
+            document.getElementById('password').value = '560111';
+        }
+    </script>
+</body>
+</html>
